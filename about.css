@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,41 +8,76 @@
     text-transform: capitalize;
     text-decoration: none;
     transition: all .3s linear;
-}
+} */
 
 :root {
-    --teal-clr: #4bbf73;
-    --green-clr: #019501;
-    --yellow-clr: #ffc63d;
-    --box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+  --black: #000; 
+  --black-light: #353535; 
+  --white: #fff; 
+  --body: #fff4e3;
+  --blue: #0663a2; 
+  --blue-main: #239FDD; 
+  --blue-light: #28a3f7;
+  --teal-clr: #4bbf73;
+  --green: #13941E;
+  --green-clr: #019501;
+  --yellow: #f9c80c;
+  --yellow-clr: #ffc63d;
+  --red: #f96900;
+  --grey: #ddd;
+
+  --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+    --box-shadow: 0 .8rem 1rem rgba(0,0,0,.5);  
+    --box-shadow-clr: 0 .8rem 1rem rgba(252, 252, 252, 0.7);
+    --gradient: linear-gradient(45deg, var(--blue), var(--blue-light));
+
+    --font-h1: calc(30px + (60 - 30) * ((100vw - 300px) / (1600 - 300)));   
+    --font-h2: calc(25px + (50 - 25) * ((100vw - 300px) / (1600 - 300)));    
+    --font-h3: calc(20px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));      
+    --font-h4: calc(16px + (30 - 16) * ((100vw - 300px) / (1600 - 300))); 
+       
+    --font-p-h5: calc(14px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
+    --font-p-big: calc(12px + (18 - 12) * ((100vw - 300px) / (1600 - 300)));  
+    --font-p-mid: calc(12px + (15 - 12) * ((100vw - 300px) / (1600 - 300)));    
+    --font-p-small: calc(8px + (12 - 8) * ((100vw - 300px) / (1600 - 300))); 
+    --font-p-pony: calc(6px + (10 - 6) * ((100vw - 300px) / (1600 - 300))); ;
+
+  --number-icons: calc(25px + (40 - 25) * ((100vw - 300px) / (1600 - 300)));   
 }
 
 *::selection {
-    background: var(--green-clr);
-    color: #fff;
+    background: var(--green);
+    color: var(--white);
 }
-
+::-webkit-scrollbar {
+  width: 0.8rem;
+  }
+  ::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: var(--green);
+  }
+  ::-webkit-scrollbar-track {
+  background-color: var(--black-light);
+  }
 html {
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-padding-top: 7rem;
 }
-
 body {
-    background: #282828;
+    background: var(--black-light);
 }
-
 section {
-    padding: 2rem 9%;
+    padding: 2rem 5%;
 }
 
 .btn {
     display: inline-block;
     padding: 0.8rem 3rem;
-    font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300))); 
-    border: .2rem solid var(--green-clr);
-    color: var(--green-clr);
+    font-size: var(--font-p-big); 
+    border: .2rem solid var(--green);
+    color: var(--green);
     background: transparent;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -50,8 +85,8 @@ section {
     overflow: hidden;
     position: relative;
     z-index: 0;
+    box-shadow: var(--box-shadow);
 }
-
 .btn::before {
     content: '';
     position: absolute;
@@ -59,114 +94,97 @@ section {
     right: 0;
     width: 0%;
     height: 100%;
-    background: var(--green-clr);
+    background: var(--green);
     z-index: -1;
     transition: 0.3s;
 }
-
 .btn:hover::before {
     width: 100%;
     left: 0;
 }
-
 .btn:hover {
-    color: #fff;
+    color: var(--white);
 }
 
-/* banner section start */
-
+/* НАЧАЛО секции БАНЕР banner section START  */
 .banner {
     width: 100%;
     min-height: 50vh;
     background: url(img/about/about-bg1.jpg) no-repeat center/cover;
-    border-image: fill 0 linear-gradient(#0008, #000);
+    border-image: fill 0 linear-gradient(#0009, #4e5041d1);
 }
-
 .banner .content {
     margin-top: 5%;
 }
-
-.banner .content h3 {
-    font-size: calc(30px + (65 - 30) * ((100vw - 300px) / (1600 - 300)));
-    color: var(--green-clr);
+.banner .content h1 {
+    font-size: var(--font-h1);
+    color: var(--green);
 }
-
 .banner .content p {
     max-width: 50%;
-    color: #fff;
+    color: var(--white);
     padding: 1rem 0rem;
-    font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+    font-size: var(--font-p-big);
 }
+/* КОНЕЦ секции БАНЕР banner section END */
 
-/* banner section end */
-
-/* about section start */
-
+/* НАЧАЛО секции О НАС about section START*/
 .about {
     min-height: 70vh;
-    background: var(--green-clr);
+    background: var(--green);
 }
-
 .about .box-container {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     width: 90%;
     margin: 0 auto;
-    gap: 2rem;
+    gap: 3rem;
 }
-
 .about .box-container .img {
     flex: 1 1 40rem;
     padding: 2rem;
 }
-
 .about .box-container .img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     border-radius: 1rem;
 }
-
 .about .box-container .content {
     flex: 1 1 40rem;
     padding: 2rem; 
 }
-
-.about .box-container .content h3 {
-    font-size: calc(30px + (65 - 30) * ((100vw - 300px) / (1600 - 300)));
+.about .box-container .content h1 {
+    font-size: var(--font-h1);
 }
-
 .about .box-container .content p {
-    font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+    font-size: var(--font-p-big);
     padding: 1rem 0rem; 
 }
+/* КОНЕЦ секции О НАС about section END */
 
-/* about section end */
 
-/* advantages section start */
-
+/* НАЧАЛО секции ПРЕЕМУЩЕСТВА advantages section STARTt */
 .advantages {
     min-height: 60vh;
 }
-
 .advantages .content {
-    color: #fff;
+    color: var(--body);
     text-align: center;
 }
-
-.advantages .content h3 {
-    font-size: calc(30px + (65 - 30) * ((100vw - 300px) / (1600 - 300)));
+.advantages .content h1 {
+    font-size: var(--font-h1);
 }
-
+.advantages .content h1 span {
+  color: var(--green);
+}
 .advantages .content p {
-    font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+    font-size: var(--font-p-big);
     padding: 1rem 0rem; 
     padding: 1rem 0rem;
     margin-bottom: 5rem; 
 }
-
-
 .advantages .box-container {
     display: flex;
     flex-wrap: wrap;
@@ -174,31 +192,27 @@ section {
     width: 90%;
     margin: 0 auto;
 }
-
 .advantages .box-container .box {
     flex: 1 1 25rem;
     padding: 2rem;
-    background: #fff;
+    background: var(--body);
     margin: 1rem;
     text-align: center;
-    border: .5rem solid var(--yellow-clr);
-    box-shadow: var(--box-shadow);
+    border-radius: 0.5rem;
+    border: .3rem solid var(--green);
+    /* box-shadow: var(--box-shadow); */
 }
-
-.advantages .box-container .box h4 {
-    font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+.advantages .box-container .box h5 {
+    font-size: var(--font-p-h5);
     margin: 1rem;
 }
-
 .advantages .box-container .box p {
-    font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
+    font-size: var(--font-p-mid);
 }
-
-/* advantages section end */
-
-/* people section start */
+/* КОНЕЦ секции ПРЕЕМУЩЕСТВА advantages section END  */
 
 
+/* НАЧАЛО секции ЛЮДИ people section START t */
 .people {
     min-height: 60vh;
     background: url(img/about/people.jpg) no-repeat center/cover;
@@ -208,41 +222,48 @@ section {
     align-items: center;
 }
 
-.people h3 {
-    font-size: calc(30px + (65 - 30) * ((100vw - 300px) / (1600 - 300)));
-    color: #fff;
+.people h1 {
+    font-size: var(--font-h1);
+    color: var(--white);
 }
-
-.people h3 span {
-    color: var(--yellow-clr);
+.people h1 span {
+    color: var(--green);
 }
+/* КОНЕЦ секции ЛЮДИ people section END */
 
-/* people section end */
 
-/* footer section start */
-
+/* НАЧАЛО секции ФУТОР footer section START */
 .footer {
     display: flex;
     justify-content: center;
     align-items: center;flex-direction: column;
     flex-wrap: wrap;
 }
-
+.hr {
+  width: 100%;
+  border: .1rem solid rgba(225, 235, 230, 0.969);
+  margin: 2rem 0rem;
+  /* width: 100px;
+  margin: 50px auto;
+  border: 1px solid rgb(248, 245, 245); */
+}
 .footer .copyright {
     margin-top: 3rem;
-    color: #fff;
-    font-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1600 - 300))); 
+    color: var(--white);
+    font-size: var(--font-p-small); 
 }
-
 .footer .copyright span {
-    color: var(--green-clr);
+    color: var(--green);
 }
-
-/* footer section end */
+.footer .copyright a {
+  color: var(--white);
+  
+  text-decoration: underline;
+}
+/* КОНЕЦ секции ФУТОР footer section END  */
 
 
 /* media queries */
-
 @media (max-width: 860px) {
     .footer .menu {
         display: flex;

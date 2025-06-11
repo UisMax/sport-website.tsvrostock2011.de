@@ -1,4 +1,4 @@
-* {
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,74 +8,120 @@
     text-transform: capitalize;
     text-decoration: none;
     transition: all .3s linear;
-}
+} */
 
 :root {
-    --teal-clr: #4bbf73;
-    --green-clr: #019501;
-    --yellow-clr: #ffc63d;
-    --box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+  --black: #000; 
+  --black-light: #353535; 
+  --white: #fff; 
+  --body: #fff4e3;
+  --blue: #0663a2; 
+  --blue-main: #239FDD; 
+  --blue-light: #28a3f7;
+  --green: #13941E;
+  --green-clr: #019501;
+  --teal-clr: #4bbf73;
+  --yellow: #f9c80c;
+  --yellow-clr: #ffc63d;
+  --red: #f96900;
+  --grey: #ddd;
+
+  --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 .8rem 1rem rgba(0,0,0,.5);  
+  --box-shadow-clr: 0 .8rem 1rem rgba(252, 252, 252, 0.7);
+  --gradient: linear-gradient(45deg, var(--blue), var(--blue-light));
+
+  --font-h1: calc(30px + (60 - 30) * ((100vw - 300px) / (1600 - 300)));   
+  --font-h2: calc(25px + (50 - 25) * ((100vw - 300px) / (1600 - 300)));    
+  --font-h3: calc(20px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));      
+  --font-h4: calc(16px + (30 - 16) * ((100vw - 300px) / (1600 - 300)));
+
+  --font-p-h5: calc(14px + (25 - 14) * ((100vw - 300px) / (1600 - 300)));
+  --font-p-big: calc(12px + (18 - 12) * ((100vw - 300px) / (1600 - 300)));  
+  --font-p-mid: calc(12px + (15 - 12) * ((100vw - 300px) / (1600 - 300)));     
+  --font-p-small: calc(8px + (12 - 8) * ((100vw - 300px) / (1600 - 300))); 
+  --font-p-pony: calc(6px + (10 - 6) * ((100vw - 300px) / (1600 - 300))); 
+
+  --number-icons: calc(25px + (40 - 25) * ((100vw - 300px) / (1600 - 300)));   
 }
 
 *::selection {
-    background: var(--green-clr);
-    color: #fff;
+  background: var(--green);
+  color: var(--white);
 }
-
+::-webkit-scrollbar {
+  width: 0.8rem;
+  }
+  ::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: var(--green);
+  }
+  ::-webkit-scrollbar-track {
+  background-color: var(--black-light);
+  }
 html {
-    font-size: 62.5%;
-    overflow-x: hidden;
-    scroll-behavior: smooth;
-    scroll-padding-top: 7rem;
+  font-size: 62.5%;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  scroll-padding-top: 7rem;
 }
 
 body {
-    background: #282828;
+  background: var(--black-light);
 }
-
 section {
-    padding: 2rem 9%;
+  padding: 2rem 5%;
+}
+::-webkit-scrollbar {
+width: 0.8rem;
+}
+::-webkit-scrollbar-thumb {
+border-radius: 1rem;
+background-color: var(--green);
+}
+::-webkit-scrollbar-track {
+background-color: var(--black-light);
 }
 
 .btn {
-    display: inline-block;
-    padding: 0.8rem 3rem;
-    font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300))); 
-    border: .2rem solid var(--green-clr);
-    color: var(--green-clr);
-    background: transparent;
-    border-radius: 0.5rem;
-    cursor: pointer;
-    margin: 1rem;
-    overflow: hidden;
-    position: relative;
-    z-index: 0;
+  display: inline-block;
+  padding: 0.8rem 3rem;
+  font-size: var(--font-p-big); 
+  border: .2rem solid var(--green);
+  color: var(--green);
+  background: transparent;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  margin: 1rem;
+  overflow: hidden;
+  position: relative;
+  z-index: 0;
+  box-shadow: var(--box-shadow);
 }
-
 .btn::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 0%;
-    height: 100%;
-    background: var(--green-clr);
-    z-index: -1;
-    transition: 0.3s;
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 0%;
+  height: 100%;
+  background: var(--green);
+  z-index: -1;
+  transition: 0.3s;
 }
-
 .btn:hover::before {
-    width: 100%;
-    left: 0;
+  width: 100%;
+  left: 0;
 }
-
 .btn:hover {
-    color: #fff;
+  color: var(--white);
 }
 
-/* contacts banner section start */
 
 
+
+
+/* НАЧАЛО секции БАНЕР contacts banner section START */
 .contacts-banner {
     min-height: 70vh;
     background: url(img/contacts/contacts-bg1.png) no-repeat center/cover;
@@ -86,28 +132,27 @@ section {
     align-items: center;
     flex-direction: column;
 }
-
 .contacts-banner .content {
-    color: #fff;
+    color: var(--body);
+    margin-top: 10rem;
 }
-
-.contacts-banner .content h2 {
-    font-size: calc(30px + (65 - 30) * ((100vw - 300px) / (1600 - 300)));
+.contacts-banner .content h1 {
+    font-size: var(--font-h1);
 }
-
+.contacts-banner .content h1 span {
+  color: var(--green);
+}
 .contacts-banner .content p {
-    max-width: 60rem;
-    font-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1600 - 300)));
+    max-width: 70rem;
+    font-size: var(--font-p-big);
     padding: 1rem;
 }
-
-/* contacts banner section end */
-
-/* contacts information section start */
+/* КОНЕЦ секции БАНЕР contacts banner section END  */
 
 
+/* НАЧАЛО секции ИНФОРМАЦИЯ contacts information section START */
 .contacts-info {
-    min-height: 50vh;
+    min-height: 70vh;
     background: url(img/contacts/info-bg1.jpg) no-repeat center/cover;
     /* border-image: fill 0 linear-gradient(#0009, #000); */
     text-align: center;
@@ -116,7 +161,6 @@ section {
     align-items: center;
     flex-direction: column;
 }
-
 .contacts-info  .box-container {
     display: flex;
     flex-wrap: wrap;
@@ -124,80 +168,224 @@ section {
     width: 90%;
     margin: 0 auto;
     gap: 1.5rem;
+    text-align: center;
 }
-
 .contacts-info  .box-container .box {
     flex: 1 1 30rem;
-    background: #fff;
+    background: var(--body);
     padding: 2rem;
+    box-shadow: var(--box-shadow);
+    border: .1rem solid rgba(0,0,0,.2);
+    border-radius: 0.5rem;
 }
-
 .contacts-info  .box-container .box h3 {
-    font-size: calc(25px + (50 - 25) * ((100vw - 300px) / (1600 - 300)));  
+    font-size: var(--font-h3);  
 }
-
 .contacts-info  .box-container .box p,
 .contacts-info  .box-container .box address {
-    font-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1600 - 300))); 
+    font-size: var(--font-p-big);
+    
+}
+.contacts-info  .box-container .box a {
+  font-size: var(--font-p-big);     
+  color: var(--green);
+  text-decoration: underline;
 }
 
-.contacts-info  .box-container .box:nth-child(2) p:nth-child(even) {
+/* .contacts-info  .box-container .box:nth-child(2) p:nth-child(even) {
     font-weight: 800;
-}
+} */
+/* КОНЕЦ секции ИНФОРМАЦИЯ contacts information section END */
 
 
-/* contacts information section end */
-
-/* contacts form section start */
-
-.get-in-touch {
-    min-height: 60vh;
-    background: var(--green-clr);
+/* НАЧАЛО секции ФОРМА contacts form section START */
+/* .get-in-touch {
+  background: var(--green);
+  min-height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
+.heading {
+  text-align: center;
+  font-size: var(--font-h1);
+  padding: 1rem;
+  color: var(--black-light);
+  margin-bottom: 3rem;
+}
+.heading span {
+  background: var(--black-light);
+  color: var(--green);
+  padding: 0.5rem;
+  border-radius: 1rem;
+}
+
 .form {
     max-width: 60rem;
     padding: 2rem 2.5rem;
-    background-color: #222;
+    background-color: var(--black-light);
     border-radius: 0.8rem;
 }
-
 .form input, .form textarea {
     width: 100%;
     margin: 1rem 0rem;
     padding: 2rem 1rem;
+    
 }
-
 .form textarea {
     height: 15rem;
     resize: none;
-}
-
+} */
 /* contacts form section end */
 
-/* footer section start */
 
+/* Начало секции КАК С НАМИ СВЯЗАТЬСЯ contacts section start  */
+.heading {              
+  margin-bottom: 2.5rem;          
+  text-align: center;             
+  color: var(--body);        
+  font-size: var(--font-h1);   
+  box-shadow: var(--box-shadow);
+}
+.heading span {          
+  color: var(--green);        
+}
+.contacts {
+  min-height: 50vh;
+  background: var(--black-light);
+}
+.contacts .row {
+  display: flex;                      /* элемент становится флекс-контейнером, внутри флекс-элементы */
+  align-items: center;                /* все элементы по центру поперечной оси выравниванием по вертикали */
+  flex-wrap: wrap;                    /* флекс-элементам переноситься на новые строки wrap разрешить перенос*/
+  gap: 2.5rem;                        /* отступ между элементами внутри флекса 2,5рем=40рх  */
+  
+}
+.contacts .row .img {
+  flex: 1 1 60rem;    /* управление размерами флекс-элемента для адаптации изображения*/
+  box-shadow: var(--box-shadow);
+}
+.contacts .row form {
+  flex: 1 1 40rem;    /* свойство переноса и направления 1, сжиматие, если места мало 1, базовый размер 40рем=640рх */
+}
+.contacts .row form .box {
+  width: 100%;                        /* ширина бокса 100% */
+  margin: 1rem 0rem 2rem;             /* внешний отступ сверху 1рем справа и слева 0 снизу 2рем */
+  border-radius: 0.5rem;              /* скругление углов 0,5рем=4рх */
+  background-color: var(--body);  /* фон поля с переменной желтого цвета */
+  font-size: var(--font-p-big);         /* размер шрифта текста самый малый с переменной */ 
+  padding: 0.5rem 1rem;       /* внутрений отступ от грациц справа слева 0,5рем=8рх верху снизу 1рем*/ 
+  text-transform: none;       /* отмена всех трансформаций текста*/
+}
+.contacts .row form textarea.box {
+  height: 15rem;            /* высота поля ввода 15рем=240рх*/
+  resize: none;             /* размеры поля ввода none — изменить нельзя */
+}
+.contacts .row form span {
+  font-size: var(--font-p-mid);   /* размер текста спана синий указателя*/ 
+  color: var(--green);      /* цвет желтый текста спана  указателя*/      
+}
+.contacts .row form .gender {
+  margin: 1rem 0rem 2rem;               /* внешний отступ сверху 1рем справа и слева 0 снизу 2рем */
+}
+.contacts .row form .gender label {
+  margin-left: 0.2rem;                /* внешний отступ кнопки от границы слева 0,2рем=8рх */
+  font-size: var(--font-p-mid);         /* размер шрифта надписи самый малый с переменной */ 
+  color: var(--body);            /* цвет синий шрифта */
+  cursor: pointer;
+}
+.contacts .row form .gender #female {    /* обращение к индедифиратору #female */
+  margin-left: 2rem;                   /* внешний отступ слева кнопки от надписи 2рем=32рх */
+}
+.contacts .row form .gender input {
+  appearance: none;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background-color: var(--green); 
+  cursor: pointer;
+  transition: 0.3s;
+}
+.contacts .row form .gender input:checked {
+  background-color: var(--red);
+  border-radius: 50%;
+}
+.contacts .row form .gender #female:checked ~ label[for=male] {
+  color: orangered;
+}
+/* Конец секции КАК С НАМИ СВЯЗАТЬСЯcontacts section end  */
+
+
+/* footer section start */
 .footer {
     display: flex;
     justify-content: center;
-    align-items: center;flex-direction: column;
+    align-items: center;
+    flex-direction: column;
     flex-wrap: wrap;
 }
+.footer .footer-social {
+  width: 25%;
+  padding-bottom: 0rem;
+  margin-top: 1.5rem;
+}
+.footer .footer-social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footer .footer-social {
+  /* display: flex;
+  align-items: center; */
+  gap: 2rem;
+}
+.footer  .footer-social li a {
+  font-size: 2rem;
+  display: block;
+  /* color: #fff; */
+  transition: all .3s;
 
+  text-align: center;
+  width: 4.5rem;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  border-radius: 50%;
+  color: var(--body);
+  background-color: var(--black-light);
+  border: 0.2rem solid var(--green);
+  
+}
+.footer .footer-social li a:hover {
+  /* color: dodgerblue; */
+  color: var(--green);
+  transform: translateY(-1rem);
+  box-shadow: var(--box-shadow-clr);
+}
+
+.hr {
+  width: 100%;
+  border: .1rem solid rgba(225, 235, 230, 0.969);
+  margin: 2rem 0rem;
+  /* width: 100px;
+  margin: 50px auto;
+  border: 1px solid rgb(248, 245, 245); */
+}
 .footer .copyright {
     margin-top: 3rem;
-    color: #fff;
-    font-size: calc(12px + (15 - 12) * ((100vw - 300px) / (1600 - 300))); 
+    color: var(--white);
+    font-size: var(--font-p-small); 
 }
-
 .footer .copyright span {
-    color: var(--green-clr);
+    color: var(--green);
 }
-
-/* footer section end */
+.footer .copyright a {
+  color: var(--white);
+  
+  text-decoration: underline;
+}
+/* КОНЕЦ секции ФУТОР footer section END  */
 
 
 @media (max-width: 860px) {

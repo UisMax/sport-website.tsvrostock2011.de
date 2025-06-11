@@ -3,22 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contacts</title>
+    <title>Contacts - TSV Rostock 2011 e.V.</title>
 
+    <!-- Подключаем CSS link reset.css -->
+    <link rel="stylesheet" href="reset.css" />
+
+    <!-- Подключаем стили CSS link custom contact.css file-->
     <link rel="stylesheet" href="contact.css">
 
-     <!-- font link  -->
+     <!-- Подключаем ссылка на шрифт font link-->
      <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
+
+     <!-- Ссылка на иконки fontwesome link для адаптации-->
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+  />
 </head>
+
 <body>
 
-    <!-- contacts banner section start -->
-
+    <!-- НАЧАЛО секции БАНЕР contacts banner section START -->
     <section class="contacts-banner">
 
         <div class="content">
 
-            <h2>Kontakt & Anfahrt</h2>
+            <h1><span>Kontakt</span> & Anfahrt</h1>
 
             <p><strong>Wir würden uns freuen, von Ihnen zu hören</strong></p>
 
@@ -29,77 +39,153 @@
         </div>
 
     </section>
+    <!-- КОНЕЦ секции БАНЕР contacts banner section END -->
 
-    <!-- contacts banner section end -->
 
-    <!-- contacts information section start -->
-
+    <!-- НАЧАЛО секции ИНФОРМАЦИЯ contacts information section START -->
     <section class="contacts-info">
 
         <div class="box-container">
 
             <div class="box">
-                <h3>Find Us</h3>
-                <address>California</address>
-                <address>Oldendorfer Str. 35D, 18147 Rostock</address>
+                <h3>Standort</h3>
+                <p></p>
+                <address><a href=https://maps.app.goo.gl/W8sKnT2SnwfZsDgMA target="_blank" >Oldendorfer Str. 35D</a></address>
+                <p>18147 Rostock Toitenwinkel</p>
             </div>
 
             <div class="box">
-                <h3>Hours</h3>
-                <p>Monday - Saturday</p>
-                <p>7am - 9pm</p>
-                <p>Sunday</p>
-                <p>10am - 6pm</p>
+                <h3>E-Mail-Adresse</h3>
+                <p>E-Mail:  kontakt@tsvrostock2011.de</p>
+                <p>Interneet: tsvrostock2011.de</p>
             </div>
 
             <div class="box">
-                <h3>Call us</h3>
+                <h3>Telefone</h3>
                 <p>+123-456-788</p>
                 <p>+123-456-789</p>
             </div>
 
-        </div>
-
-    </section>
-
-    <!-- contacts information section end -->
-
-    <!-- contacts form section start -->
-
-    <section class="get-in-touch">
-
-
-        <div class="form">
-
-            <input type="text" required placeholder="Enter your name">
-            <input type="number" required placeholder="Enter your phone (+123-45-678-900)">
-            <textarea cols="30" rows="10" placeholder="Enter your message"></textarea>
-            <button class="btn">Submit</button>
+            <div class="box">
+              <h3>Telefone</h3>
+              <p>+123-456-788</p>
+              <p>+123-456-789</p>
+          </div>
 
         </div>
 
-
     </section>
+    <!-- КОНЕЦ секции ИНФОРМАЦИЯ contacts information section END   -->
 
-    <!-- contacts form section end -->
 
-    <!-- footer section start -->
+    <!-- НАЧАЛО секции ФОРМА contacts form section START -->
+    <!-- <section class="get-in-touch">
+      <h2 class="heading"><span>Verbinde dich</span> mit uns</h2>
 
-<section class="footer">
+      <div class="form">
 
-    <div class="menu">
+          <input type="text" required placeholder="eingeben your email..">
+          <input type="number" required placeholder="geben Sie Ihre Telefonnummer ein..">
+          <textarea cols="30" rows="10" placeholder="eingeben Ihre Meinung.."></textarea>
+          <button class="btn">Nachricht senden</button>
+
+      </div>
+
+
+    </section> -->
+
+    <!-- НФЧАЛО секции КАК С НАМИ СВЯЗАТЬСЯ contacts section start  -->
+<section id="contacts" class="contacts">                          <!-- создадим секцию с индетификатором "contacts" с классом "contacts" -->
+
+  <!--внутри встроеный заголовок 2типа с классом "heading" плюс спан -->
+  <h2 class="heading"><span>Verbinde dich</span> mit uns</h2>   
+  <!-- <p>Wir sind innerhalb der Öffungszeiten errreichbar</p> -->
+
+  <!-- внутри блок с классом "row"строка таблица  -->
+  <div class="row">         
+
+      <!-- добавим изображение на страницу  -->
+      <div class="img">              
+          <img src="img/contacts/form_img0.png">   <!-- изображение на странице  -->
+      </div>
+      
+      <!-- web3forms.com -->
+      <form action="https://api.web3forms.com/submit" method="POST">   <!-- форма для заполнения инфо на сервер   https://web3forms.com/platforms/html-contact-form     -->
+          <!-- <h3 class="heading ">Contact Us</h3> -->
+
+          <!-- <input type="hidden" name="access_key" value="Enter_your_access_key_from_web3forms"> -->  
+          <input type="hidden" name="access_key" value="83147f72-cb0a-4fb5-8270-471d80ee3c35">     <!-- ключ доступа -->
+
+          <!-- создаем поле Имя пользователя -->
+          <span>dein Name, Vorname</span>     
+          <input type="text" class="box" required placeholder="eingeben Ihr Name.." maxlength="50" name="name" autocomplete="off">  <!-- создаем поле для ввода имени пользователя с подсказкой-->
+
+          <!-- содаем поле e-mail пользователя -->
+          <span>deine E-Mail-Adresse</span>    
+          <input type="email" class="box" required placeholder="eingeben your email.." maxlength="50" name="email" autocomplete="off">  <!-- создаем поле для ввода e-mail пользователя с подсказкой-->
+
+          <!-- создаем поле номер телефона пользователя -->
+          <span>deine Telefonnummer</span>  
+          <input type="number" name="telefon" class="box" required placeholder="geben Sie Ihre Telefonnummer ein.." max="99999999999999" min="0">  <!-- создаем поле для ввода номера телефона пользователя -->
+
+          <!-- созаем поле сообщение пользователя -->
+          <span>dein Anligen</span> 
+          <textarea class="box" name="message" cols="30" rows="10" required placeholder="eingeben Ihre Meinung.."></textarea>  <!--  создаем многострочное поле ввода сообщения пользователя с подсказкой -->
+
+          <!-- создаем поле гендер -->
+          <span>Wähle Geschlecht</span>   
+          <div class="gender">
+              <input type="radio" name="gender" id="male" value="männlich">
+              <label for="male">männlich</label>
+
+              <input type="radio" name="gender" id="female" value="weiblich">
+              <label for="female">weiblich</label>
+          </div>    
+
+          <!-- Кнопка отправить сообщение -->
+          <input type="submit" value="Nachricht senden" class="btn" name="send">  <!-- создаем поле для кнопки отправить сназванием -->
+
+          </div>
+      </form>
+  </div>
+</section>
+    <!-- КОНЕЦ секции ФОРМА contacts form section END -->
+
+
+    <!-- НАЧАЛО секции ФУТОР footer section START -->
+    <section class="footer">
+      <div class="menu">
         <a href="index.html" class="btn">Willkommen</a>
         <a href="about.html" class="btn">Über uns</a>
         <a href="join.html" class="btn">Mitglied werden</a>
         <a href="team.html" class="btn">Verein</a>
         <a href="contact.html" class="btn">Finden</a>
-    </div>
-    
-    <h3 class="copyright"> created by <span>Coding UisMax</span> | all rights reserved</h3>
-    
+      </div>
+      
+      <ul class="footer-social">
+        <li>
+          <a href="https://www.facebook.com/TSVRostock2011/reviews" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/tsvrostock2011"
+            ><i class="fa-brands fa-square-instagram"></i
+          ></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-twitter"></i></a>
+        </li>
+        <li>
+          <a href="#"><i class="fa-brands fa-youtube"></i></a>
+        </li>
+      </ul>
+
+      <hr>
+      <h3 class="copyright">
+        &copy;2025 All rights Reserved <span>Coding UisMax</span> |
+        <a href="page.html" target="_blank">Impressum & Datenschutz</a>
+      </h3>
     </section>
-    
-    <!-- footer section end -->
+    <!-- КОНЕЦ секции ФУТОР footer section END -->
     
 </body>
 </html>

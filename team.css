@@ -11,38 +11,77 @@
 } */
 
 :root {
-    --teal-clr: #4bbf73;
-    --green-clr: #019501;
-    --yellow-clr: #ffc63d;
-    --box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+  --black: #000; 
+  --black-light: #353535; 
+  --white: #fff; 
+  --body: #fff4e3;
+  --blue: #0663a2; 
+  --blue-main: #239FDD; 
+  --blue-light: #28a3f7;
+  --yellow: #f9c80c; 
+  --yellow-clr: #ffc63d;
+  --green: #19a846;
+  --green-clr: #019501;;
+  --teal-clr: #4bbf73;
+  --red: #f96900;
+  --grey: #ddd; 
+
+  --border: 0.1rem solid rgba(0, 0, 0, 0.1);
+  --box-shadow: 0 .8rem 1rem rgba(0,0,0,.5);  
+  --box-shadow-clr: 0 .8rem 1rem rgba(252, 252, 252, 0.7);
+  --gradient: linear-gradient(45deg, var(--blue), var(--blue-light));
+
+  --font-h1: calc(30px + (60 - 30) * ((100vw - 300px) / (1600 - 300)));   
+  --font-h2: calc(20px + (40 - 20) * ((100vw - 300px) / (1600 - 300)));    
+  --font-h3: calc(18px + (35 - 18) * ((100vw - 300px) / (1600 - 300)));      
+  --font-h4: calc(16px + (30 - 16) * ((100vw - 300px) / (1600 - 300))); 
+  --font-h5: calc(14px + (25 - 14) * ((100vw - 300px) / (1600 - 300))); 
+  
+
+  --font-p-h6: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300)));
+  --font-p-big: calc(12px + (18 - 12) * ((100vw - 300px) / (1600 - 300)));  
+  --font-p-mid: calc(12px + (15 - 12) * ((100vw - 300px) / (1600 - 300)));    
+  --font-p-small: calc(8px + (12 - 8) * ((100vw - 300px) / (1600 - 300))); 
+  --font-p-pony: calc(6px + (10 - 6) * ((100vw - 300px) / (1600 - 300))); 
+  
+  --number-icons: calc(25px + (40 - 25) * ((100vw - 300px) / (1600 - 300)));   /* размер иконок области просмотра*/
 }
 
 *::selection {
-    background: var(--green-clr);
-    color: #fff;
+    background: var(--green);
+    color: var(--white);
 }
-
-/* html {
+::-webkit-scrollbar {
+  width: 0.8rem;
+  }
+  ::-webkit-scrollbar-thumb {
+  border-radius: 1rem;
+  background-color: var(--green);
+  }
+  ::-webkit-scrollbar-track {
+  background-color: var(--black-light);
+  }
+html {
     font-size: 62.5%;
     overflow-x: hidden;
     scroll-behavior: smooth;
     scroll-padding-top: 7rem;
-} */
-
+}
 body {
-    background: #282828;
+    background: var(--black-light);
 }
 
 section {
-    padding: 2rem 9%;
+    padding: 2rem 5%;
 }
+
 
 .btn {
     display: inline-block;
     padding: 0.8rem 3rem;
-    font-size: calc(14px + (20 - 14) * ((100vw - 300px) / (1600 - 300))); 
-    border: .2rem solid var(--green-clr);
-    color: var(--green-clr);
+    font-size: var(--font-p-big); 
+    border: .2rem solid var(--green);
+    color: var(--green);
     background: transparent;
     border-radius: 0.5rem;
     cursor: pointer;
@@ -50,6 +89,7 @@ section {
     overflow: hidden;
     position: relative;
     z-index: 0;
+    box-shadow: var(--box-shadow);
 }
 
 .btn::before {
@@ -59,7 +99,7 @@ section {
     right: 0;
     width: 0%;
     height: 100%;
-    background: var(--green-clr);
+    background: var(--green);
     z-index: -1;
     transition: 0.3s;
 }
@@ -70,11 +110,10 @@ section {
 }
 
 .btn:hover {
-    color: #fff;
+    color: var(--body);
 }
 
-/* team section start */
-
+/* НАЧАЛО секции КОМАНДА team section START */
 .team {
     min-height: 60vh;
     background: url(img/team/team-bg.jpg) no-repeat center/cover;
@@ -85,18 +124,24 @@ section {
     flex-direction: column;
 }
 
-.team h2 {
-    color: #fff;
-    font-size: calc(35px + (100 - 35) * ((100vw - 300px) / (1600 - 300)));
+.team h1 {
+    color: var(--body);
+    font-size: var(--font-h1);
 }
+.team h1 span {
+  color: var(--green)
+}
+.team p {
+  color: var(--body);
+  font-size: var(--font-p-h6);
+}
+/* КОНЕЦ секции КОМАНДА team section END */
 
-/* team section end */
 
-/* trainers section start */
-
+/* НАЧАЛО секции ТРЕНЕРЫ trainers section START  */
 .trainers {
     min-height: 100vh;
-    background: #282828;
+    background: var(--body);
 }
 
 .trainers .box-container {
@@ -110,7 +155,7 @@ section {
 
 .trainers .box-container .box {
     flex: 1 1 25rem;
-    border: .2rem solid var(--yellow-clr);
+    border: .3rem solid var(--green);
     text-align: center;
     box-shadow: var(--box-shadow);
     display: flex;
@@ -126,23 +171,23 @@ section {
 }
 
 .trainers .box-container .box .box-content {
-    color: #fff;
+    color: var(--black-light);
 }
 
 .trainers .box-container .box .box-content h4 {
-    font-size: calc(16px + (25 - 16) * ((100vw - 300px) / (1600 - 300))); 
+    font-size: var(--font-h5); 
+    margin-top: 1.5rem;
 }
 
 
 .trainers .box-container .box .box-content p {
-    font-size: calc(12px + (16 - 12) * ((100vw - 300px) / (1600 - 300)));
+    font-size: var(--font-p-big);
     padding: 1rem;
 }
+/* КОНЕЦ секции ТРЕНЕРЫ trainers section END  */
 
-/* trainers section end */
 
-/* footer section start */
-
+/* НАЧАЛО секции ФУТОР footer section START */
 .footer {
     display: flex;
     justify-content: center;
@@ -165,8 +210,7 @@ section {
   
   text-decoration: underline;
 }
-
-/* footer section end */
+/* КОНЕЦ секции ФУТОР footer section END */
 
 
 @media (max-width: 860px) {
